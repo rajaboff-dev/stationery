@@ -17,6 +17,14 @@
   background-position: center;
 }
 
+div::-webkit-scrollbar {
+  display: none;
+}
+div {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
