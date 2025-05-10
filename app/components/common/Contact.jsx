@@ -16,29 +16,29 @@ function Contact() {
       </div>
       <div className='w-full flex flex-col items-center justify-center gap-5 2xl:flex-row'>
         <div className="w-full overflow-x-auto lg:overflow-x-hidden">
-          <div className="grid grid-cols-4 gap-5 min-w-max 2xl:grid-cols-2">
-            <div className="bg-[#F9F5F5] w-72 p-4 flex-shrink-0 rounded-lg flex flex-col items-start justify-center gap-2">
+          <div className="grid grid-cols-4 gap-5 min-w-max md:min-w-auto 2xl:grid-cols-2">
+            <div className="bg-[#F9F5F5] max-w-72 p-4 rounded-lg flex flex-col items-start justify-center gap-2">
               <h1 className="flex items-center gap-2 text-xl font-semibold">
                 <PhoneIcon/>
                 Telefon raqam
               </h1>
               <p className="text-sm text-secondary">+998 33 513-6053</p>
             </div>
-            <div className="bg-[#F9F5F5] w-72 p-4 flex-shrink-0 rounded-lg flex flex-col items-start justify-center gap-2">
+            <div className="bg-[#F9F5F5] max-w-72 p-4 rounded-lg flex flex-col items-start justify-center gap-2">
               <h1 className="flex items-center gap-2 text-xl font-semibold">
                 <ClockIcon/>
                 Ish vaqti
               </h1>
               <p className="text-sm text-secondary">08:30 - 19:30</p>
             </div>
-            <div className="bg-[#F9F5F5] w-72 p-4 flex-shrink-0 rounded-lg flex flex-col items-start justify-center gap-2">
+            <div className="bg-[#F9F5F5] max-w-72 p-4 rounded-lg flex flex-col items-start justify-center gap-2">
               <h1 className="flex items-center gap-2 text-xl font-semibold">
                 <LocationDotIcon/>
                 Manzil
               </h1>
               <p className="text-sm text-secondary">Urganch shahar, qaysidir mahalla f...</p>
             </div>
-            <div className="bg-[#F9F5F5] w-72 p-4 flex-shrink-0 rounded-lg flex flex-col items-start justify-center gap-2">
+            <div className="bg-[#F9F5F5] max-w-72 p-4 rounded-lg flex flex-col items-start justify-center gap-2">
               <h1 className="flex items-center gap-2 text-xl font-semibold">
                 <TimeIcon/>
                 Ish kunlari
