@@ -31,9 +31,9 @@ function Navbar() {
   const handleHamburgerMenuClick = () => {
     setIsMenuOpen(!isMenuOpen);
   }
-
   useEffect(() => {
     if (isMenuOpen && screen.width <= 1023) {
+      console.log('hidden')
       document.body.style.overflowY = 'hidden';
     } else {
       document.body.style.overflowY = 'auto';
