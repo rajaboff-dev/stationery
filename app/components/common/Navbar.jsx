@@ -5,23 +5,23 @@ import Link from "next/link";
 
 const navLinks = [
   {
-    url: '/',
+    url: '#who-its-for',
     label: 'Kimlar uchun'
   },
   {
-    url: '/',
+    url: '#cta',
     label: 'Orzuyingiz'
   },
   {
-    url: '/',
+    url: '#categories',
     label: 'Kategoriya'
   },
   {
-    url: '/',
+    url: '#products',
     label: 'Mahsulotlar'
   },
   {
-    url: '/',
+    url: '#contact',
     label: 'Bog\'lanish'
   }
 ]
@@ -32,7 +32,7 @@ function Navbar() {
     setIsMenuOpen(!isMenuOpen);
   }
   useEffect(() => {
-    if (isMenuOpen && screen.width <= 1023) {
+    if (isMenuOpen && window.innerWidth <= 1023) {
       console.log('hidden')
       document.body.style.overflowY = 'hidden';
     } else {
@@ -45,7 +45,7 @@ function Navbar() {
   }, [isMenuOpen]);
 
   return (
-    <nav className='flex items-center justify-between px-5 py-7'>
+    <nav className='flex items-center justify-between px-5 py-7 fixed w-full bg-white z-50'>
       <div className='w-10 h-10 rounded-md bg-[#9F9191]'></div>
       {isMenuOpen ? (
         <CloseIcon onClick={handleHamburgerMenuClick} className='lg:hidden' />
@@ -61,7 +61,7 @@ function Navbar() {
       >
         <div className='flex flex-col items-center justify-center gap-10 h-9/12 md:flex-row'>
           {navLinks.map((link, index) => (
-            <Link href={link.url} key={index}>{link.label}</Link>
+            <Link href={link.url} scroll={true} key={index}>{link.label}</Link>
           ))}
         </div>
         <a href="tel:(33) 513-6053" className='text-primary'>(33) 513-6053</a>

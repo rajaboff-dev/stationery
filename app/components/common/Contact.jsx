@@ -1,65 +1,98 @@
+'use client'
 import React from 'react';
 import Section from "@/app/components/utils/Section";
 import Input from "@/app/components/ui/Input";
 import Button from "@/app/components/ui/Button";
+import {Swiper, SwiperSlide} from "swiper/react";
+import {Autoplay} from "swiper/modules";
+import 'swiper/css'
+
+
 
 function Contact() {
+  const items = [
+    {
+      icon: <PhoneIcon />,
+      title: 'Telefon raqam',
+      value: '+998 33 513-6053'
+    },
+    {
+      icon: <ClockIcon />,
+      title: 'Ish vaqti',
+      value: '08:30 - 19:30'
+    },
+    {
+      icon: <LocationDotIcon />,
+      title: 'Manzil',
+      value: 'Urganch shahar, qaysidir mahalla f...'
+    },
+    {
+      icon: <TimeIcon />,
+      title: 'Ish kunlari',
+      value: 'Dushanba - Yakshanba'
+    }
+  ]
   return (
-    <Section className='flex flex-col items-center justify-center gap-5'>
+    <Section className='flex flex-col items-center justify-center gap-5 py-10' id='contact'>
       <div className='md:w-full md:flex md:justify-between md:items-center'>
         <h1 className='text-2xl'>Bog‘lanish<span className='text-primary'>?</span></h1>
-        <p className='text-secondary'>Biz bilan qanday bog‘lanishingizni va manzilimizni qanday topib borishni siz endi
+        <p className='text-secondary max-w-[660px]'>Biz bilan qanday bog‘lanishingizni va manzilimizni qanday topib
+          borishni siz endi
           juda yaxshi bilasiz, shunchaki qo‘ng‘iroq qiling yoki manzil bo‘yicha keling</p>
       </div>
-      <div>
-        <img src="/images/map.png" alt="address"/>
+      <div className='w-full'>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d11943.218987695105!2d60.60499628346599!3d41.55182468059247!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2s!4v1746941744257!5m2!1sru!2s"
+          className='w-full h-[650px] lg:h-[450px]'
+          allowFullScreen=""
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        ></iframe>
       </div>
       <div className='w-full flex flex-col items-center justify-center gap-5 2xl:flex-row'>
-        <div className="w-full overflow-x-auto lg:overflow-x-hidden">
-          <div className="grid grid-cols-4 gap-5 min-w-max md:min-w-auto 2xl:grid-cols-2">
-            <div className="bg-[#F9F5F5] max-w-72 p-4 rounded-lg flex flex-col items-start justify-center gap-2">
+        <Swiper
+          modules={[Autoplay]}
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: false,
+          }}
+          slidesPerView={1}
+          spaceBetween={20}
+          className="!w-full contacts-slider lg:!grid lg:!grid-cols-2 lg:!gap-5 lg:!grid-rows-2"
+          breakpoints={{
+            620: {
+              slidesPerView: 2,
+            }
+          }}
+        >
+          {items.map((item, index) => (
+            <SwiperSlide
+              key={index}
+              className="bg-[#F9F5F5] !w-full p-4 rounded-lg flex flex-col items-start justify-center gap-2"
+            >
               <h1 className="flex items-center gap-2 text-xl font-semibold">
-                <PhoneIcon/>
-                Telefon raqam
+                {item.icon}
+                {item.title}
               </h1>
-              <p className="text-sm text-secondary">+998 33 513-6053</p>
-            </div>
-            <div className="bg-[#F9F5F5] max-w-72 p-4 rounded-lg flex flex-col items-start justify-center gap-2">
-              <h1 className="flex items-center gap-2 text-xl font-semibold">
-                <ClockIcon/>
-                Ish vaqti
-              </h1>
-              <p className="text-sm text-secondary">08:30 - 19:30</p>
-            </div>
-            <div className="bg-[#F9F5F5] max-w-72 p-4 rounded-lg flex flex-col items-start justify-center gap-2">
-              <h1 className="flex items-center gap-2 text-xl font-semibold">
-                <LocationDotIcon/>
-                Manzil
-              </h1>
-              <p className="text-sm text-secondary">Urganch shahar, qaysidir mahalla f...</p>
-            </div>
-            <div className="bg-[#F9F5F5] max-w-72 p-4 rounded-lg flex flex-col items-start justify-center gap-2">
-              <h1 className="flex items-center gap-2 text-xl font-semibold">
-                <TimeIcon/>
-                Ish kunlari
-              </h1>
-              <p className="text-sm text-secondary">Dushanba - Yakshanba</p>
-            </div>
-          </div>
-        </div>
+              <p className="text-sm text-secondary line-clamp-1">{item.value}</p>
+            </SwiperSlide>
+          ))}
+        </Swiper>
         <div className='flex flex-col items-center justify-center gap-5 w-full'>
           <div className='flex flex-col items-center justify-center gap-5 w-full 2xl:flex-row'>
             <Input placeholder='Ismingiz' type='text'/>
             <Input placeholder='+998 00 000 00 00' type='text'/>
           </div>
-          <textarea placeholder='Qo‘shimcha izohingiz (bu ixtiyoriy)' className='px-5 py-3 bg-[#F9F5F5] w-full min-h-28'/>
+          <textarea placeholder='Qo‘shimcha izohingiz (bu ixtiyoriy)'
+                    className='px-5 py-3 bg-[#F9F5F5] w-full min-h-28'/>
         </div>
       </div>
       <div className='w-full flex items-center justify-center 2xl:justify-end'>
         <Button className='bg-primary w-72'>Yuborish</Button>
       </div>
     </Section>
-  );
+  )
+    ;
 }
 
 const PhoneIcon = (props) => (

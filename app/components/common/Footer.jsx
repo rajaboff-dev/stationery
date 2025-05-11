@@ -2,7 +2,7 @@ import React from 'react';
 
 function Footer() {
   return (
-    <footer className='bg-[#F9F5F5] p-10 flex flex-col items-center justify-center gap-5 mt-20 2xl:flex-row-reverse 2xl:justify-between px-40 text-center'>
+    <footer className='bg-[#F9F5F5] p-3 lg:px-40 lg:p-10 flex flex-col items-center justify-center gap-5 mt-20 2xl:flex-row-reverse 2xl:justify-between text-center' id='footer'>
       <div className='flex items-center justify-center gap-5'>
         <YoutubeIcon className='bg-[#F2E9E9] w-8 h-8 p-1 rounded-lg' />
         <InstagramIcon className='bg-[#F2E9E9] w-8 h-8 p-1 rounded-lg' />

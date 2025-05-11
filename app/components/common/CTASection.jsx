@@ -1,12 +1,13 @@
 import React from 'react';
 import Section from "@/app/components/utils/Section";
 import Button from "@/app/components/ui/Button";
+import Link from "next/link";
 
 const items = ['O‘z biznesingizni boshlamoqchi bo‘lsangiz', 'Biror bir chet tilini o‘rganmoqchi bo‘lsangiz', 'Xullas shunga o’xshash nimadirlarni xoxlasangiz']
 
 function CTASection() {
   return (
-    <Section className='bg-[#0C0B0B] pt-10 px-0 lg:flex overflow-hidden lg:items-end lg:justify-between lg:!pr-0'>
+    <Section className='bg-[#0C0B0B] pt-10 px-0 lg:flex overflow-hidden lg:items-end lg:justify-between lg:!pr-0' id='cta'>
       <div className='px-5 text-secondary flex items-start justify-center flex-col gap-5 pb-20'>
         <h1 className='text-white text-2xl font-medium'>Orzuyingizdagi hayot tarzini qurmoqchi bo‘lsangiz, nima
           kerakligini bilasizmi?</h1>
@@ -21,8 +22,12 @@ function CTASection() {
           ))}
         </ul>
         <div className='flex items-center justify-center gap-5 w-full'>
-          <Button className='bg-primary'>Mahsulotlar</Button>
-          <Button className='bg-[#221F1F]'>Bog'lanish</Button>
+          <Link className='w-full h-full' href='#products'>
+            <Button className='bg-primary cursor-pointer'>Mahsulotlar</Button>
+          </Link>
+          <Link className='w-full h-full' href='#contact'>
+            <Button className='bg-[#221F1F]'>Bog'lanish</Button>
+          </Link>
         </div>
       </div>
       <img src="/images/cta-img-for-mobile.png" alt="cta-img" className='bg-[#0C0B0B] block lg:hidden w-full'/>

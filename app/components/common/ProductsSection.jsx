@@ -41,10 +41,10 @@ const items = [
 
 function ProductsSection() {
   return (
-    <Section>
-      <div className='md:w-full md:flex md:justify-between md:items-center md:gap-10'>
+    <Section className='py-10'>
+      <div className='md:w-full md:flex md:justify-between md:items-center md:gap-10' id='products'>
         <h1 className='text-2xl'>Mahsulotlar<span className='text-primary'>?</span></h1>
-        <p className='text-secondary'>Ana endi siz bizdagi mavjud barcha mahsulotlarni ko‘rib chiqishingiz mumkin bo‘ladi, faqat shoshilmang, batafsil ko‘rib chiqing.</p>
+        <p className='text-secondary max-w-[660px]'>Ana endi siz bizdagi mavjud barcha mahsulotlarni ko‘rib chiqishingiz mumkin bo‘ladi, faqat shoshilmang, batafsil ko‘rib chiqing.</p>
       </div>
       <div className='grid grid-cols-2 gap-5 md:grid-cols-4 mt-5'>
         {items.map((item, index) => (
