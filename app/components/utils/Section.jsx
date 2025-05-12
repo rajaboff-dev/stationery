@@ -3,7 +3,7 @@ import {twMerge} from "tailwind-merge";
 
 function Section({ className, children, ...props }) {
   return (
-    <section className={twMerge('px-5 xl:px-40', className)} {...props}>
+    <section className={twMerge('px-[20px] xl:px-[130px] scroll-mt-[80px]', className)} {...props}>
       {children}
     </section>
   );

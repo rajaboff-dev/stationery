@@ -7,31 +7,31 @@ const items = ['O‘z biznesingizni boshlamoqchi bo‘lsangiz', 'Biror bir chet 
 
 function CTASection() {
   return (
-    <Section className='bg-[#0C0B0B] pt-10 px-0 lg:flex overflow-hidden lg:items-end lg:justify-between lg:!pr-0' id='cta'>
-      <div className='px-5 text-secondary flex items-start justify-center flex-col gap-5 pb-20'>
-        <h1 className='text-white text-2xl font-medium'>Orzuyingizdagi hayot tarzini qurmoqchi bo‘lsangiz, nima
+    <Section className='bg-[#0C0B0B] pt-0 px-0 lg:flex overflow-hidden lg:items-end lg:justify-between lg:!pr-0' id='cta'>
+      <div className='px-5 text-secondary w-full flex items-start justify-center flex-col gap-5 pt-[32px] pb-[26px] xl:pt-[90px] xl:pb-[98px]'>
+        <h1 className='text-white text-[24px] xl:text-[40px] font-medium'>Orzuyingizdagi hayot tarzini qurmoqchi bo‘lsangiz, nima
           kerakligini bilasizmi?</h1>
-        <p>Agar siz quyidagilarni orzu qilgan bo‘sangiz, unutmang orzu orzuligicha qolmasligi kerak. Orzu amalga oshishi
+        <p className='text-[16px] xl:text-[18px] text-base'>Agar siz quyidagilarni orzu qilgan bo‘sangiz, unutmang orzu orzuligicha qolmasligi kerak. Orzu amalga oshishi
           uchun, harakat qilish kerak.</p>
-        <ul>
+        <ul className='flex flex-col items-start justify-center gap-[12px]'>
           {items.map((item, index) => (
-            <li className='flex items-center justify-start gap-3' key={index}>
+            <li className='flex items-center justify-start gap-[12px]' key={index}>
               <CheckIcon/>
               {item}
             </li>
           ))}
         </ul>
-        <div className='flex items-center justify-center gap-5 w-full'>
+        <div className='flex items-center justify-center gap-5 w-full xl:w-fit'>
           <Link className='w-full h-full' href='#products'>
-            <Button className='bg-primary cursor-pointer'>Mahsulotlar</Button>
+            <Button className='bg-primary border-primary cursor-pointer'>Mahsulotlar</Button>
           </Link>
           <Link className='w-full h-full' href='#contact'>
-            <Button className='bg-[#221F1F]'>Bog'lanish</Button>
+            <Button className='bg-[#221F1F] border-[#221F1F]'>Bog'lanish</Button>
           </Link>
         </div>
       </div>
       <img src="/images/cta-img-for-mobile.png" alt="cta-img" className='bg-[#0C0B0B] block lg:hidden w-full'/>
-      <img src="/images/cta-img.png" alt="cta-img" className=' bg-[#0C0B0B] hidden lg:block object-cover w-6/12'/>
+      <img src="/images/cta-img.png" alt="cta-img" className=' bg-[#0C0B0B] hidden lg:block object-cover w-7/12'/>
     </Section>
 
   );

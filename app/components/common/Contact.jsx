@@ -44,17 +44,17 @@ function Contact() {
   }
 
   return (
-    <Section className='flex flex-col items-center justify-center gap-5 py-10' id='contact'>
-      <div className='md:w-full md:flex md:justify-between md:items-center'>
-        <h1 className='text-2xl'>Bog‘lanish<span className='text-primary'>?</span></h1>
-        <p className='text-secondary max-w-[660px]'>Biz bilan qanday bog‘lanishingizni va manzilimizni qanday topib
+    <Section className='flex flex-col items-center justify-center gap-5 py-[80px]' id='contact'>
+      <div className='md:w-full lg:flex md:justify-between md:items-center'>
+        <h1 className='text-[24px] font-medium xl:font-normal xl:text-[56px]'>Bog‘lanish<span className='text-primary'>?</span></h1>
+        <p className='text-secondary text-[12px] font-medium xl:font-normal xl:text-[18px] max-w-[660px]'>Biz bilan qanday bog‘lanishingizni va manzilimizni qanday topib
           borishni siz endi
           juda yaxshi bilasiz, shunchaki qo‘ng‘iroq qiling yoki manzil bo‘yicha keling</p>
       </div>
       <div className='w-full'>
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d11943.218987695105!2d60.60499628346599!3d41.55182468059247!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2s!4v1746941744257!5m2!1sru!2s"
-          className='w-full h-[650px] lg:h-[450px]'
+          className='w-full h-[650px] lg:h-[450px] rounded-[12px]'
           allowFullScreen=""
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
@@ -82,7 +82,7 @@ function Contact() {
           {items.map((item, index) => (
             <SwiperSlide
               key={index}
-              className="bg-[#F9F5F5] !w-full p-4 rounded-lg flex flex-col items-start justify-center gap-2"
+              className="bg-[#F9F5F5] !w-full p-4 rounded-[12px] flex flex-col items-start justify-center gap-2"
             >
               <h1 className="flex items-center gap-2 text-xl font-semibold">
                 {item.icon}
@@ -124,14 +124,14 @@ function Contact() {
             defaultValue=''
             render={({field}) => (
               <textarea {...field} name='note' placeholder='Qo‘shimcha izohingiz (bu ixtiyoriy)'
-                        className='px-5 py-3 bg-[#F9F5F5] w-full min-h-28 max-h-60'/>
+                        className='px-5 py-3 bg-[#F9F5F5] w-full min-h-28 max-h-60 rounded-[12px]' />
             )}
           />
 
         </form>
       </div>
-      <div className='w-full flex flex-col gap-5 items-center justify-center xl:justify-end'>
-        <Button className='bg-primary w-72 cursor-pointer' form='contact-form' type='submit'>Yuborish</Button>
+      <div className='w-full flex flex-col gap-5 items-center justify-center xl:items-end'>
+        <Button className='bg-primary w-[320px] cursor-pointer' form='contact-form' type='submit'>Yuborish</Button>
         {isContactFormSubmitted && (
           <h1>Xabaringiz yuborildi!</h1>
         )}

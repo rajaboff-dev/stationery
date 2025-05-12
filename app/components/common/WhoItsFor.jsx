@@ -30,8 +30,8 @@ const cards = [
 
 function WhoItsFor() {
   return (
-    <Section className='py-16' id='who-its-for'>
-      <h1 className='text-2xl'>Biz kimga kerakmiz<span className='text-primary'>?</span></h1>
+    <Section className='py-[64px] xl:py-[80px]' id='who-its-for'>
+      <h3 className='text-[24px] xl:text-[56px] font-normal'>Biz kimga kerakmiz<span className='text-primary'>?</span></h3>
       <Swiper
         modules={[ Autoplay ]}
         spaceBetween={20}
@@ -40,7 +40,7 @@ function WhoItsFor() {
           delay: 3000,
           disableOnInteraction: false,
         }}
-        className='mt-5 h-96'
+        className='mt-5 h-[427px]'
         breakpoints={{
           1024: {
             slidesPerView: 4,
@@ -54,14 +54,14 @@ function WhoItsFor() {
         {cards.map((card, i) => (
             <SwiperSlide
               key={i}
-              className="w-[320px] h-96 bg-cover bg-no-repeat bg-center flex-col items-start justify-end p-3 text-white rounded-lg"
+              className="w-[320px] h-[427px] bg-cover bg-no-repeat bg-center flex-col items-start justify-end p-5 text-white rounded-[12px]"
               style={{
-                backgroundImage: `linear-gradient(180deg, rgba(255,255,255,0.15) 15%, rgba(0,0,0,1) 100%), url(${card.imgUrl})`,
+                backgroundImage: `linear-gradient(180deg, rgba(255,255,255,0.01) 15%, rgba(0,0,0,1) 110%), url(${card.imgUrl})`,
                 display: 'flex',
               }}
             >
-              <p className='font-light'>{card.label}</p>
-              <h1 className="text-xl font-medium">{card.description}</h1>
+              <p className='font-normal text-base'>{card.label}</p>
+              <h1 className="text-[20px] font-semibold">{card.description}</h1>
             </SwiperSlide>
         ))}
       </Swiper>

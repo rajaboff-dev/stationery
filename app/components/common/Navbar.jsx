@@ -45,7 +45,7 @@ function Navbar() {
   }, [isMenuOpen]);
 
   return (
-    <nav className='flex items-center justify-between px-5 py-7 fixed w-full bg-white z-50'>
+    <nav className='flex items-center justify-between px-[20px] py-[16px] xl:px-[130px] xl:py-[20px] h-[80px] fixed w-full bg-white z-50'>
       <div className='w-10 h-10 rounded-md bg-[#9F9191]'></div>
       {isMenuOpen ? (
         <CloseIcon onClick={handleHamburgerMenuClick} className='lg:hidden' />
@@ -55,7 +55,7 @@ function Navbar() {
       <div
         className={twMerge(
           'w-full bg-white h-[100vh] lg:flex lg:items-center lg:w-auto lg:space-x-4 absolute lg:relative top-0 left-0 lg:top-0 lg:left-0 p-4 lg:p-0 lg:bg-transparent transition-all duration-500 ease-in-out transform flex flex-col items-center justify-start lg:flex-row lg:h-fit',
-          isMenuOpen ? 'translate-y-24 opacity-100 lg:opacity-100 lg:translate-y-0' : '-translate-y-full opacity-0 lg:opacity-100 lg:translate-y-0',
+          isMenuOpen ? 'translate-y-20 opacity-100 lg:opacity-100 lg:translate-y-0' : '-translate-y-full opacity-0 lg:opacity-100 lg:translate-y-0',
           'md:translate-x-0'
         )}
       >

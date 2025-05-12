@@ -30,21 +30,28 @@ const items = [
 
 function CategoriesSection() {
   return (
-    <Section className='py-14 flex flex-col items-center justify-start gap-5' id='categories'>
-      <div className='md:flex md:justify-between md:items-center md:w-full md:gap-10'>
-        <h1 className='text-2xl'>Kategoriya<span className='text-primary'>?</span></h1>
-        <p className='text-secondary max-w-[660px]'>Qisqacha ko‘rib chiqishingiz kerak bo‘lgan kategoriyalarni siz bilan baham ko‘rmoqchiman. Ko‘rib tanishib chiqing.</p>
+    <Section className='pt-[64px] xl:pt-[80px] flex flex-col items-center justify-start gap-5' id='categories'>
+      <div className='lg:flex md:justify-between md:items-center md:w-full md:gap-10'>
+        <h1 className='text-[24px] xl:text-[56px] text-base'>Kategoriya<span className='text-primary'>?</span></h1>
+        <p className='text-secondary text-[12px] xl:text-base max-w-[660px]'>Qisqacha ko‘rib chiqishingiz kerak bo‘lgan kategoriyalarni
+          siz bilan baham ko‘rmoqchiman. Ko‘rib tanishib chiqing.</p>
       </div>
-      <div className='flex flex-col items-center justify-start gap-5'>
+      <div className='flex flex-col items-center justify-start gap-[32px]'>
         {items.map((item, i) => (
-          <div className='flex flex-col items-center justify-start gap-3 md:flex-row md:gap-10 md:justify-between w-full' key={i}>
-            <img src={item.imageUrl} alt="category-image" className='h-36 w-full object-cover object-top rounded-lg md:w-5/12 md:h-48'/>
-            <div className='flex flex-col gap-3 md:w-7/12 md:gap-12'>
-              <div>
-                <h1 className='text-xl font-medium'>{item.title}</h1>
-                <p className='text-secondary'>{item.description}</p>
+          <div
+            className='flex flex-col items-center justify-start gap-3 lg:flex-row lg:gap-10 lg:justify-between w-full group'
+            key={i}>
+            <div className='h-36 w-full rounded-[12px] lg:w-[660px] lg:h-[248px] overflow-hidden'>
+              <img src={item.imageUrl} alt="category-image"
+                   className='object-cover object-top w-full h-full duration-200 group-hover:scale-105 group-hover:grayscale-100'/>
+            </div>
+            <div className='flex flex-col gap-3 lg:w-7/12 lg:gap-12'>
+              <div className='flex flex-col gap-[8px]'>
+                <h1 className='text-[20px] font-semibold xl:text-[36px] font-medium'>{item.title}</h1>
+                <p className='text-secondary text-base font-normal'>{item.description}</p>
+                <hr className='w-0 group-hover:w-full duration-200 bg-primary h-1 rounded-lg !border-none'/>
               </div>
-              <h2>{item.whoItsFor}</h2>
+              <h2 className='text-[#221F1F] xl:text-[#7A7070]'>{item.whoItsFor}</h2>
             </div>
           </div>
         ))}

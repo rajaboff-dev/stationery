@@ -46,17 +46,19 @@ const items = [
 
 function ProductsSection() {
   return (
-    <Section className='py-10'>
-      <div className='md:w-full md:flex md:justify-between md:items-center md:gap-10' id='products'>
-        <h1 className='text-2xl'>Mahsulotlar<span className='text-primary'>?</span></h1>
-        <p className='text-secondary max-w-[660px]'>Ana endi siz bizdagi mavjud barcha mahsulotlarni ko‘rib chiqishingiz mumkin bo‘ladi, faqat shoshilmang, batafsil ko‘rib chiqing.</p>
+    <Section className='pt-[80px]' id='products'>
+      <div className='md:w-full lg:flex md:justify-between md:items-center md:gap-10'>
+        <h1 className='text-[24px] font-medium xl:font-normal xl:text-[56px]'>Mahsulotlar<span className='text-primary'>?</span></h1>
+        <p className='text-secondary text-[12px] font-semibold xl:font-normal xl:text-[18px] max-w-[660px]'>Ana endi siz bizdagi mavjud barcha mahsulotlarni ko‘rib chiqishingiz mumkin bo‘ladi, faqat shoshilmang, batafsil ko‘rib chiqing.</p>
       </div>
-      <div className='grid grid-cols-2 gap-5 md:grid-cols-4 mt-5'>
+      <div className='grid grid-cols-2 gap-5 md:grid-cols-3 lg:grid-cols-4 mt-5'>
         {items.map((item, index) => (
           <div key={index}>
-            <img src={item.imageUrl} alt="product-image" className='bg-[#F9F5F5] rounded-lg h-56 w-[320px] object-cover'/>
-            <h1 className='text-xl font-medium'>{item.price} so'm</h1>
-            <p className='text-xs text-secondary'>{item.description}</p>
+            <div className='rounded-[12px] h-[427px] max-h-[427px] max-w-[320px] overflow-hidden bg-[#F9F5F5]'>
+              <img src={item.imageUrl} alt="product-image" className='bg-[#F9F5F5] object-contain w-full h-full scale-100'/>
+            </div>
+            <h1 className='text-[20px] font-semibold font-medium mt-[8px]'>{item.price} so'm</h1>
+            <p className='text-base font-normal text-secondary'>{item.description}</p>
           </div>
         ))}
       </div>

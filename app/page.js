@@ -11,14 +11,16 @@ import Footer from "@/app/components/common/Footer";
 export default function Home() {
   return (
     <>
-      <Navbar />
-      <HomeSection />
-      <WhoItsFor />
-      <CTASection />
-      <CategoriesSection />
-      <ProductsSection />
-      <Contact />
-      <Footer />
+      <Navbar/>
+      <div className={""}>
+        <HomeSection/>
+        <WhoItsFor/>
+        <CTASection/>
+        <CategoriesSection/>
+        <ProductsSection/>
+        <Contact/>
+        <Footer/>
+      </div>
     </>
   );
 }
