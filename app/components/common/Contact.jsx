@@ -1,11 +1,12 @@
 'use client'
-import React from 'react';
+import React, {useRef, useState} from 'react';
 import Section from "@/app/components/utils/Section";
 import Input from "@/app/components/ui/Input";
 import Button from "@/app/components/ui/Button";
 import {Swiper, SwiperSlide} from "swiper/react";
 import {Autoplay} from "swiper/modules";
 import 'swiper/css'
+import {Controller, useForm} from "react-hook-form";
 
 
 
@@ -32,6 +33,16 @@ function Contact() {
       value: 'Dushanba - Yakshanba'
     }
   ]
+
+  const { control, handleSubmit, reset } = useForm()
+  const [isContactFormSubmitted, setIsContactFormSubmitted] = useState(false)
+
+  const onSubmit = (values) => {
+    console.log(values)
+    setIsContactFormSubmitted(true)
+    reset()
+  }
+
   return (
     <Section className='flex flex-col items-center justify-center gap-5 py-10' id='contact'>
       <div className='md:w-full md:flex md:justify-between md:items-center'>
@@ -58,8 +69,11 @@ function Contact() {
           }}
           slidesPerView={1}
           spaceBetween={20}
-          className="!w-full contacts-slider lg:!grid lg:!grid-cols-2 lg:!gap-5 lg:!grid-rows-2"
+          className="!w-full !h-full contacts-slider lg:!grid lg:!grid-cols-2 lg:!gap-5 lg:!grid-rows-2 lg:!content-start"
           breakpoints={{
+            1024: {
+              enabled: false
+            },
             620: {
               slidesPerView: 2,
             }
@@ -78,17 +92,49 @@ function Contact() {
             </SwiperSlide>
           ))}
         </Swiper>
-        <div className='flex flex-col items-center justify-center gap-5 w-full'>
+        <form className='flex flex-col items-center justify-center gap-5 w-full' id='contact-form'
+              onSubmit={handleSubmit(onSubmit)}>
           <div className='flex flex-col items-center justify-center gap-5 w-full 2xl:flex-row'>
-            <Input placeholder='Ismingiz' type='text'/>
-            <Input placeholder='+998 00 000 00 00' type='text'/>
+            <Controller
+              name='name'
+              control={control}
+              defaultValue=''
+              rules={{
+                required: true,
+              }}
+              render={({field}) => (
+                <Input {...field} name='Name' placeholder='Ismingiz' type='text' />
+              )}
+            />
+            <Controller
+              name='phone_number'
+              control={control}
+              defaultValue=''
+              rules={{
+                required: true,
+              }}
+              render={({field}) => (
+                <Input {...field} name='Phone number' placeholder='+998 00 000 00 00' type='text' />
+              )}
+            />
           </div>
-          <textarea placeholder='Qo‘shimcha izohingiz (bu ixtiyoriy)'
-                    className='px-5 py-3 bg-[#F9F5F5] w-full min-h-28'/>
-        </div>
+          <Controller
+            name='note'
+            control={control}
+            defaultValue=''
+            render={({field}) => (
+              <textarea {...field} name='note' placeholder='Qo‘shimcha izohingiz (bu ixtiyoriy)'
+                        className='px-5 py-3 bg-[#F9F5F5] w-full min-h-28 max-h-60'/>
+            )}
+          />
+
+        </form>
       </div>
-      <div className='w-full flex items-center justify-center 2xl:justify-end'>
-        <Button className='bg-primary w-72'>Yuborish</Button>
+      <div className='w-full flex flex-col gap-5 items-center justify-center xl:justify-end'>
+        <Button className='bg-primary w-72 cursor-pointer' form='contact-form' type='submit'>Yuborish</Button>
+        {isContactFormSubmitted && (
+          <h1>Xabaringiz yuborildi!</h1>
+        )}
       </div>
     </Section>
   )

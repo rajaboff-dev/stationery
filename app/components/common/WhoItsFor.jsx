@@ -44,6 +44,7 @@ function WhoItsFor() {
         breakpoints={{
           1024: {
             slidesPerView: 4,
+            enabled:false
           },
           670: {
             slidesPerView: 2,
