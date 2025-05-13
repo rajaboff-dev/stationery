@@ -12,7 +12,7 @@ function HomeSection() {
         <Link className='w-full h-full' href='#products'>
           <Button className='bg-primary border-primary cursor-pointer'>Mahsulotlar</Button>
         </Link>
-        <Link className='w-full h-full' href='#contact'>
+        <Link className='w-sfull h-full' href='#contact'>
           <Button className='border border-white cursor-pointer'>Bog'lanish</Button>
         </Link>
       </div>
