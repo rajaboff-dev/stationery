@@ -26,7 +26,7 @@ function CTASection() {
             <Button className='bg-primary border-primary cursor-pointer'>Mahsulotlar</Button>
           </Link>
           <Link className='w-full h-full' href='#contact'>
-            <Button className='bg-[#221F1F] border-[#221F1F]'>Bog'lanish</Button>
+            <Button className='bg-[#221F1F] border-[#221F1F] cursor-pointer'>Bog'lanish</Button>
           </Link>
         </div>
       </div>

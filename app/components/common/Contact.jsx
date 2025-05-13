@@ -8,6 +8,7 @@ import {Autoplay} from "swiper/modules";
 import 'swiper/css'
 import {Controller, useForm} from "react-hook-form";
 import {IMaskInput} from "react-imask";
+import Error from "@/app/components/ui/Error";
 
 
 
@@ -101,29 +102,36 @@ function Contact() {
               control={control}
               defaultValue=''
               rules={{
-                required: true,
+                required: 'Ism kiritilishi shart!',
               }}
-              render={({field}) => (
-                <Input {...field} name='Name' placeholder='Ismingiz' type='text' />
-              )}
-            />
-            <Controller
-              name='phone_number'
-              control={control}
-              defaultValue=''
-              rules={{
-                required: true,
-              }}
-              render={({field: { value, onChange }}) => (
+              render={({field: { onChange, value }, fieldState: { error }}) => (
+                <div className='flex flex-col items-start justify-start w-full gap-3'>
+                  <Input onChange={onChange} value={value} name='Name' placeholder='Ismingiz' type='text'/>
+                  {error && <Error className='text-[12px]'>{error.message}</Error>}
+                </div>
+
+            )}
+          />
+          <Controller
+            name='phone_number'
+            control={control}
+            defaultValue=''
+            rules={{
+              required: 'Telefon raqam kiritilishi shart!',
+            }}
+            render={({field: {value, onChange}, fieldState: {error}}) => (
+              <div className='flex flex-col items-start justify-start h-full w-full gap-3'>
                 <IMaskInput
                   mask={'+998 00 000 00 00'}
-                  value={value}
-                  onAccept={onChange}
-                  lazy={false}
-                  overwrite={true}
-                  placeholder='00 000 00 00'
-                  className='px-5 py-3 bg-[#F9F5F5] w-full rounded-[12px]'
-                />
+                    value={value}
+                    onAccept={onChange}
+                    lazy={false}
+                    overwrite={true}
+                    placeholder='00 000 00 00'
+                    className='px-5 py-3 bg-[#F9F5F5] w-full rounded-[12px]'
+                  />
+                  {error && <Error className='text-[12px]'>{error.message}</Error>}
+                </div>
               )}
             />
           </div>
