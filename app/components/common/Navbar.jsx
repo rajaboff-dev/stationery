@@ -54,14 +54,14 @@ function Navbar() {
       )}
       <div
         className={twMerge(
-          'w-full bg-white h-[100vh] lg:flex lg:items-center lg:w-auto lg:space-x-4 absolute lg:relative top-0 left-0 lg:top-0 lg:left-0 p-4 lg:p-0 lg:bg-transparent transition-all duration-500 ease-in-out transform flex flex-col items-center justify-start lg:flex-row lg:h-fit',
+          'w-full bg-white h-[100vh] lg:flex lg:items-center lg:w-auto lg:space-x-4 absolute lg:relative top-0 left-0 lg:top-0 lg:left-0 p-4 lg:p-0 lg:bg-transparent transition-all duration-150 ease-in-out transform flex flex-col items-center justify-start lg:flex-row lg:h-fit',
           isMenuOpen ? 'translate-y-20 opacity-100 lg:opacity-100 lg:translate-y-0' : '-translate-y-full opacity-0 lg:opacity-100 lg:translate-y-0',
           'md:translate-x-0'
         )}
       >
         <div className='flex flex-col items-center justify-center gap-10 h-9/12 md:flex-row'>
           {navLinks.map((link, index) => (
-            <Link href={link.url} scroll={true} key={index}>{link.label}</Link>
+            <Link href={link.url} className='text-secondary' key={index}>{link.label}</Link>
           ))}
         </div>
         <a href="tel:(33) 513-6053" className='text-primary'>(33) 513-6053</a>

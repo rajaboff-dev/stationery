@@ -7,6 +7,7 @@ import {Swiper, SwiperSlide} from "swiper/react";
 import {Autoplay} from "swiper/modules";
 import 'swiper/css'
 import {Controller, useForm} from "react-hook-form";
+import {IMaskInput} from "react-imask";
 
 
 
@@ -113,8 +114,16 @@ function Contact() {
               rules={{
                 required: true,
               }}
-              render={({field}) => (
-                <Input {...field} name='Phone number' placeholder='+998 00 000 00 00' type='text' />
+              render={({field: { value, onChange }}) => (
+                <IMaskInput
+                  mask={'+998 00 000 00 00'}
+                  value={value}
+                  onAccept={onChange}
+                  lazy={false}
+                  overwrite={true}
+                  placeholder='00 000 00 00'
+                  className='px-5 py-3 bg-[#F9F5F5] w-full rounded-[12px]'
+                />
               )}
             />
           </div>
@@ -131,7 +140,7 @@ function Contact() {
         </form>
       </div>
       <div className='w-full flex flex-col gap-5 items-center justify-center xl:items-end'>
-        <Button className='bg-primary w-[320px] cursor-pointer' form='contact-form' type='submit'>Yuborish</Button>
+        <Button className='bg-primary w-full sm:w-[320px] cursor-pointer' form='contact-form' type='submit'>Yuborish</Button>
         {isContactFormSubmitted && (
           <h1>Xabaringiz yuborildi!</h1>
         )}

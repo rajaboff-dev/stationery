@@ -51,14 +51,14 @@ function ProductsSection() {
         <h1 className='text-[24px] font-medium xl:font-normal xl:text-[56px]'>Mahsulotlar<span className='text-primary'>?</span></h1>
         <p className='text-secondary text-[12px] font-semibold xl:font-normal xl:text-[18px] max-w-[660px]'>Ana endi siz bizdagi mavjud barcha mahsulotlarni ko‘rib chiqishingiz mumkin bo‘ladi, faqat shoshilmang, batafsil ko‘rib chiqing.</p>
       </div>
-      <div className='grid grid-cols-2 gap-5 md:grid-cols-3 lg:grid-cols-4 mt-5'>
+      <div className='grid grid-cols-2 place-items-center gap-5 md:grid-cols-3 lg:grid-cols-4 mt-5'>
         {items.map((item, index) => (
           <div key={index}>
-            <div className='rounded-[12px] h-[427px] max-h-[427px] max-w-[320px] overflow-hidden bg-[#F9F5F5]'>
+            <div className='rounded-[12px] max-w-[170px] h-[228px] xl:h-[427px] xl:max-h-[427px] xl:max-w-[320px] overflow-hidden bg-[#F9F5F5]'>
               <img src={item.imageUrl} alt="product-image" className='bg-[#F9F5F5] object-contain w-full h-full scale-100'/>
             </div>
-            <h1 className='text-[20px] font-semibold font-medium mt-[8px]'>{item.price} so'm</h1>
-            <p className='text-base font-normal text-secondary'>{item.description}</p>
+            <h1 className='text-[18px] font-normal xl:text-[20px] xl:font-semibold mt-[8px]'>{item.price} so'm</h1>
+            <p className='text-[12px] xl:text-base font-normal text-secondary line-clamp-1'>{item.description}</p>
           </div>
         ))}
       </div>

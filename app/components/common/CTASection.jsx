@@ -7,8 +7,8 @@ const items = ['O‘z biznesingizni boshlamoqchi bo‘lsangiz', 'Biror bir chet 
 
 function CTASection() {
   return (
-    <Section className='bg-[#0C0B0B] pt-0 px-0 lg:flex overflow-hidden lg:items-end lg:justify-between lg:!pr-0' id='cta'>
-      <div className='px-5 text-secondary w-full flex items-start justify-center flex-col gap-5 pt-[32px] pb-[26px] xl:pt-[90px] xl:pb-[98px]'>
+    <Section className='bg-[#0C0B0B] pt-1 px-0 pl-0 lg:flex lg:items-end lg:justify-between lg:!pr-0' id='cta'>
+      <div className='text-secondary px-5 lg:px-0 lg:pl-5 w-full flex items-start justify-center flex-col gap-5 pt-[32px] pb-[26px] xl:pt-[90px] xl:pb-[98px]'>
         <h1 className='text-white text-[24px] xl:text-[40px] font-medium'>Orzuyingizdagi hayot tarzini qurmoqchi bo‘lsangiz, nima
           kerakligini bilasizmi?</h1>
         <p className='text-[16px] xl:text-[18px] text-base'>Agar siz quyidagilarni orzu qilgan bo‘sangiz, unutmang orzu orzuligicha qolmasligi kerak. Orzu amalga oshishi
