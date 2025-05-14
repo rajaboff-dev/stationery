@@ -33,7 +33,6 @@ function Navbar() {
   }
   useEffect(() => {
     if (isMenuOpen && window.innerWidth <= 1023) {
-      console.log('hidden')
       document.body.style.overflowY = 'hidden';
     } else {
       document.body.style.overflowY = 'auto';
@@ -61,7 +60,14 @@ function Navbar() {
       >
         <div className='flex flex-col items-center justify-center gap-10 h-9/12 md:flex-row'>
           {navLinks.map((link, index) => (
-            <Link href={link.url} className='text-secondary' key={index} onClick={() => setIsMenuOpen(false)}>{link.label}</Link>
+            <Link
+              href={link.url}
+              className='text-secondary'
+              key={index}
+              onClick={() => setIsMenuOpen(false)}
+            >
+              {link.label}
+            </Link>
           ))}
         </div>
         <a href="tel:(33) 513-6053" className='text-primary'>(33) 513-6053</a>
